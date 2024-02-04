@@ -3,7 +3,7 @@ import authService from "../appwrite/auth";
 import { Link, useNavigate } from "react-router-dom";
 import Button from "./Button";
 import Input from "./Input";
-import Input from "./Logo";
+import Logo from "./Logo";
 import { useForm } from "react-hook-form";
 import { useDispatch } from "react-redux";
 import { login as authLogin } from "../store/authSlice";
@@ -11,7 +11,12 @@ import { login as authLogin } from "../store/authSlice";
 const Login = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
-  const { register, handleSubmit } = useForm();
+  const { register, handleSubmit } = useForm({
+    defaultValues: {
+      email: "",
+      password: "",
+    },
+  });
   const [error, setError] = useState("");
 
   const login = async (data) => {

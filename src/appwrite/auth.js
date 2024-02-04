@@ -21,6 +21,7 @@ export class AuthService {
         password,
         name
       );
+      console.log("useracc", userAccount);
       if (userAccount) {
         return this.login(email, password);
       } else {
@@ -63,4 +64,6 @@ export class AuthService {
   }
 }
 
-export default authService = new AuthService();
+const authService = new AuthService();
+
+export default authService;

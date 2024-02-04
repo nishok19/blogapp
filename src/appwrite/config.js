@@ -120,4 +120,6 @@ export class Service {
   }
 }
 
-export default service = new Service();
+const service = new Service();
+
+export default service;
